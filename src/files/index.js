@@ -27,7 +27,7 @@ api.get('/download/:name?', (ctx) => {
     ctx.body = {
       donwloadId: 'dl20201019',
       status: 'done',
-      url: 'http://',
+      url: 'http://localhost:3100/service/api/files/store/dl20201019',
     };
     statusCnt = 0;
   } else {
