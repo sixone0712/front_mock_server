@@ -1,5 +1,6 @@
 const Koa = require('koa');
 const Router = require('koa-router');
+const bodyParser = require('koa-bodyparser');
 const device = require('./devices');
 const files = require('./files');
 const restart = require('./restart');
@@ -18,6 +19,8 @@ app.use(cors(options));
 router.use('/service/api/devices', device.routes());
 router.use('/service/api/files', files.routes());
 router.use('/service/api/restart', restart.routes());
+
+app.use(bodyParser());
 
 app.use(router.routes()).use(router.allowedMethods());
 

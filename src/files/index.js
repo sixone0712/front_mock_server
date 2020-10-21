@@ -17,6 +17,9 @@ api.get('/', (ctx) => {
 
 api.post('/', (ctx) => {
   console.log(ctx.request.method, ctx.request.URL.href);
+
+  console.log(ctx.request.body);
+
   ctx.body = {
     downloadId: 'dl20201217',
   };
@@ -61,7 +64,6 @@ api.get('/store/:name', async (ctx) => {
     ctx.type = extname(fpath);
     ctx.body = fs.createReadStream(fpath);
     ctx.attachment('test_log_file.zip');
-   
   }
 });
 
