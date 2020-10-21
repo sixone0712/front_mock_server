@@ -37,6 +37,9 @@ module.exports = {
   // ESLint 룰을 설정
   "rules": {
     // prettier에 맞게 룰을 설정
-    "prettier/prettier": "error"
+    "prettier/prettier": ["error",
+    {
+      endOfLine: 'auto',
+    }]
   }
 }
