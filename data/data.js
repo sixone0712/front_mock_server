@@ -1,56 +1,93 @@
 exports.getDeviceInfo = () => {
   return {
-    lists: [
+    list: [
       {
-        key: 'ESP_01',
+        name: 'ESP',
         type: 'ESP',
-        name: 'ESP_01',
-        ip: '10.1.31.143',
-        status: [
-          'Rapid Collector (Up 12 seconds)',
-          'Postgres (Exited 12 seconds)',
+        host: '-',
+        containers: [
+          {
+            name: 'Rapid-Collector',
+            status: 'Exited (0) 24 minutes ago',
+          },
+          {
+            name: 'Database',
+            status: 'Exited (0) 4 minutes ago',
+          },
         ],
-        volume: '100G / 500G',
+
+        volumeUsed: '100G',
+        volumeTotal: '500G',
       },
       {
-        key: 'OTS_01',
-        type: 'OTS',
         name: 'OTS_01',
-        ip: '10.1.31.144',
-        status: ['File Service Collect (Up 12 seconds)'],
-        volume: '100G / 500G',
+        type: 'OTS',
+        host: '10.1.31.111',
+        containers: [
+          {
+            name: 'FileServiceCollect',
+            status: 'Up 3 minutes',
+          },
+        ],
+
+        volumeUsed: '100G',
+        volumeTotal: '500G',
       },
       {
-        key: 'OTS_02',
-        type: 'OTS',
         name: 'OTS_02',
-        ip: '10.1.31.144',
-        status: ['File Service Collect (Up 12 seconds)'],
-        volume: '100G / 500G',
+        type: 'OTS',
+        host: '10.1.31.112',
+        containers: [
+          {
+            name: 'FileServiceCollect',
+            status: 'Unknown',
+          },
+        ],
+
+        volumeUsed: '100G',
+        volumeTotal: '500G',
       },
       {
-        key: 'OTS_03',
-        type: 'OTS',
         name: 'OTS_03',
-        ip: '10.1.31.144',
-        status: ['File Service Collect (Up 12 seconds)'],
-        volume: '100G / 500G',
+        type: 'OTS',
+        host: '10.1.31.113',
+        containers: [
+          {
+            name: 'FileServiceCollect',
+            status: 'Up (0) 24 minutes ago',
+          },
+        ],
+
+        volumeUsed: '100G',
+        volumeTotal: '500G',
       },
       {
-        key: 'OTS_04',
-        type: 'OTS',
         name: 'OTS_04',
-        ip: '10.1.31.144',
-        status: ['Unknown'],
-        volume: '100G / 500G',
+        type: 'OTS',
+        host: '10.1.31.114',
+        containers: [
+          {
+            name: 'FileServiceCollect',
+            status: 'Exited (0) 24 minutes ago',
+          },
+        ],
+
+        volumeUsed: '100G',
+        volumeTotal: '500G',
       },
       {
-        key: 'OTS_05',
-        type: 'OTS',
         name: 'OTS_05',
-        ip: '10.1.31.144',
-        status: ['File Service Collect (Up 12 seconds)'],
-        volume: '100G / 500G',
+        type: 'OTS',
+        host: '10.1.31.115',
+        containers: [
+          {
+            name: 'FileServiceCollect',
+            status: 'Unknown',
+          },
+        ],
+
+        volumeUsed: '100G',
+        volumeTotal: '500G',
       },
     ],
   };

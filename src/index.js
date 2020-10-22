@@ -16,9 +16,9 @@ var options = {
 
 app.use(cors(options));
 
-router.use('/service/api/devices', device.routes());
-router.use('/service/api/files', files.routes());
-router.use('/service/api/restart', restart.routes());
+router.use('/servicemanager/api/system', device.routes());
+router.use('/servicemanager/api/restart', restart.routes());
+router.use('/servicemanager/api/files', files.routes());
 
 app.use(bodyParser());
 

@@ -6,10 +6,16 @@ const path = require('path');
 const extname = path.extname;
 
 
-api.get('/', (ctx) => {
+api.get('/', async (ctx) => {
   console.log(ctx.request.method, ctx.request.URL.href);
   const { device } = ctx.query;
   console.log('device', device);
+  await new Promise(function (resolve) {
+    setTimeout(function () {
+      resolve();
+    }, 1000);
+  });
+
   ctx.body = {
     lists: data.getFileInfo(device),
   };
