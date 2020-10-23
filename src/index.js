@@ -5,6 +5,7 @@ const device = require('./devices');
 const files = require('./files');
 const restart = require('./restart');
 const cors = require('@koa/cors');
+var session = require('koa-session');
 
 const app = new Koa();
 const router = new Router();
@@ -15,6 +16,8 @@ var options = {
 };
 
 app.use(cors(options));
+app.keys = ['Shh, its a secret!'];
+app.use(session(app)); // Include the session middleware
 
 router.use('/servicemanager/api/system', device.routes());
 router.use('/servicemanager/api/restart', restart.routes());
